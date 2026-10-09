@@ -1,75 +1,206 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ViralVault — Stories, Facts & Internet Mysteries</title>
-<meta name="description" content="Interesting stories, surprising facts and internet mysteries in simple, easy-to-read articles.">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ViralVault - Video & Image Downloader</title>
+  <meta name="description" content="ViralVault helps you open and save direct video and image links with a simple, easy-to-use tool.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #f8fafc;
+    }
+    header {
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #283047;
+    }
+    .logo { font-size: 25px; font-weight: bold; color: #67e8f9; }
+    nav a { color: #cbd5e1; margin-left: 16px; text-decoration: none; font-size: 14px; }
+    .hero { text-align: center; padding: 70px 18px 45px; }
+    .tag {
+      color: #67e8f9;
+      background: #172554;
+      border-radius: 20px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+    h1 { font-size: clamp(34px, 6vw, 56px); margin: 25px 0 14px; }
+    h1 span { color: #67e8f9; }
+    .intro { color: #aab6cc; line-height: 1.7; max-width: 600px; margin: auto; }
+    .panel {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 25px;
+      background: #151d32;
+      border: 1px solid #303b55;
+      border-radius: 18px;
+      text-align: left;
+    }
+    label { display: block; margin-bottom: 10px; font-weight: bold; }
+    input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #475569;
+      background: #0b1020;
+      color: white;
+      border-radius: 10px;
+      font-size: 15px;
+      outline: none;
+    }
+    input:focus { border-color: #67e8f9; }
+    .buttons { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+    button {
+      border: 0;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    .primary { background: #67e8f9; color: #0b1020; }
+    .secondary { background: #29354e; color: white; }
+    #message { color: #cbd5e1; font-size: 14px; line-height: 1.6; margin-top: 15px; }
+    .tools { max-width: 950px; margin: 25px auto 65px; padding: 0 20px; }
+    .tools h2, .info h2 { text-align: center; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-top: 25px; }
+    .card { background: #151d32; border: 1px solid #303b55; padding: 22px; border-radius: 15px; }
+    .card .emoji { font-size: 30px; }
+    .card p, .info p { color: #aab6cc; line-height: 1.7; }
+    .info { max-width: 760px; margin: 0 auto 55px; padding: 0 22px; }
+    footer { border-top: 1px solid #283047; padding: 25px 15px; text-align: center; color: #aab6cc; font-size: 13px; }
+    footer a { color: #67e8f9; margin: 0 8px; }
+    @media (max-width: 480px) {
+      header { padding: 18px; flex-wrap: wrap; gap: 14px; }
+      nav a { margin-left: 8px; }
+      .hero { padding-top: 48px; }
+      .panel { padding: 18px; }
+      .buttons button { flex: 1; }
+    }
+  </style>
 </head>
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="logo" href="index.html">Viral<span>Vault</span></a>
-    <nav><a href="#latest">Latest</a><a href="#facts">Facts</a><a href="#mysteries">Mysteries</a></nav>
-  </div>
-</header>
+  <header>
+    <div class="logo">⚡ ViralVault</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
 
-<main class="wrap">
-  <section class="hero">
-    <div>
-      <p class="eyebrow">DISCOVER SOMETHING NEW</p>
-      <h1>Stories that make you say, “Wait… really?”</h1>
-      <p class="lead">Interesting facts, unusual stories and internet mysteries — explained simply.</p>
-      <a class="button" href="#latest">Explore stories</a>
-    </div>
-    <div class="hero-card">✦<br><small>New stories every week</small></div>
-  </section>
+  <main id="home">
+    <section class="hero">
+      <span class="tag">SIMPLE • FAST • FREE</span>
+      <h1>Video & Image <span>Downloader</span></h1>
+      <p class="intro">
+        Open direct video and image links in one simple place.
+        Paste a direct media URL below to get started.
+      </p>
 
-  <div class="adbox">Advertisement</div>
+      <div class="panel">
+        <label for="mediaUrl">Paste a direct video or image URL</label>
+        <input id="mediaUrl" type="url" placeholder="https://example.com/video.mp4">
+        <div class="buttons">
+          <button class="primary" onclick="openMedia()">Open Media</button>
+          <button class="secondary" onclick="downloadMedia()">Try Download</button>
+        </div>
+        <div id="message" role="status">
+          Use a direct link to a media file that you own or have permission to save.
+        </div>
+      </div>
+    </section>
 
-  <section id="latest">
-    <div class="section-head"><h2>Latest stories</h2><span>Fresh reads</span></div>
-    <div class="grid">
-      <article class="card">
-        <div class="thumb">🌊</div><div class="content">
-        <span class="tag">FACT</span><h3>Why the ocean can look completely different in one place</h3>
-        <p>Color, depth, sunlight and tiny organisms can change what we see on the surface.</p>
-        <a href="article-ocean.html">Read story →</a></div>
-      </article>
-      <article class="card">
-        <div class="thumb">🧠</div><div class="content">
-        <span class="tag">SCIENCE</span><h3>Why your brain sometimes remembers the wrong detail</h3>
-        <p>Memory is not a perfect recording. Here is the simple reason behind it.</p>
-        <a href="article-memory.html">Read story →</a></div>
-      </article>
-      <article class="card">
-        <div class="thumb">🌌</div><div class="content">
-        <span class="tag">SPACE</span><h3>What would happen if you could see the Milky Way from space?</h3>
-        <p>A simple guide to one of the most beautiful sights in astronomy.</p>
-        <a href="article-milkyway.html">Read story →</a></div>
-      </article>
-    </div>
-  </section>
+    <section class="tools" id="tools">
+      <h2>Explore Our Tools</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="emoji">🎬</div>
+          <h3>Video Links</h3>
+          <p>Open direct links to supported video files in your browser.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🖼️</div>
+          <h3>Image Links</h3>
+          <p>Open direct image links and save images when your browser allows it.</p>
+        </div>
+        <div class="card">
+          <div class="emoji">🔗</div>
+          <h3>Easy to Use</h3>
+          <p>Paste a link, choose an action, and follow your browser's options.</p>
+        </div>
+      </div>
+    </section>
 
-  <div class="adbox">Advertisement</div>
+    <section class="info" id="about">
+      <h2>About ViralVault</h2>
+      <p>
+        ViralVault is a simple web tool for opening direct media links.
+        We do not host the linked files. Only save content that you own
+        or are authorized to download, and follow the source website's rules.
+      </p>
+      <h2>Privacy</h2>
+      <p>
+        This basic tool processes the link in your browser and does not
+        upload it to a ViralVault server.
+      </p>
+    </section>
+  </main>
 
-  <section id="facts">
-    <div class="section-head"><h2>Quick facts</h2><span>Easy reads</span></div>
-    <div class="facts">
-      <div><b>01</b><p>Honey can remain edible for a very long time when stored properly.</p></div>
-      <div><b>02</b><p>Octopuses have three hearts and blue blood.</p></div>
-      <div><b>03</b><p>Lightning can heat the air around it to extremely high temperatures.</p></div>
-    </div>
-  </section>
+  <footer>
+    © <span id="year"></span> ViralVault
+    <p>Simple tools for everyday use.</p>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="contact.html">Contact Us</a>
+  </footer>
 
-  <section id="mysteries" class="newsletter">
-    <p class="eyebrow">COMING SOON</p>
-    <h2>More mysteries. More facts. More stories.</h2>
-    <p>Follow the site for new articles you can discover from TikTok and social media.</p>
-  </section>
-</main>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-<footer><div class="wrap"><b>ViralVault</b><p>Interesting stories for curious people.</p><div><a href="about.html">About</a> · <a href="contact.html">Contact</a> · <a href="privacy.html">Privacy</a></div><small>© 2026 ViralVault</small></div></footer>
+    function getMediaUrl() {
+      const field = document.getElementById("mediaUrl");
+      const message = document.getElementById("message");
+      let url;
+
+      try {
+        url = new URL(field.value.trim());
+        if (url.protocol !== "https:" && url.protocol !== "http:") {
+          throw new Error("Invalid protocol");
+        }
+        message.textContent = "";
+        return url.href;
+      } catch {
+        message.textContent = "Please paste a valid link starting with https:// or http://";
+        return null;
+      }
+    }
+
+    function openMedia() {
+      const url = getMediaUrl();
+      if (url) window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function downloadMedia() {
+      const url = getMediaUrl();
+      if (!url) return;
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "";
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      document.getElementById("message").textContent =
+        "Download requested. Some websites block direct downloads; if it does not work, choose Open Media and use your browser's save option.";
+    }
+  </script>
 </body>
 </html>
