@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="q9hm9DtgzXKvTOdSj1EhILxkvqWSA00e-ffDHNVvieE" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>ViralVault - Video & Image Downloader</title>
   <meta name="description" content="ViralVault helps you open and save direct video and image links with a simple, easy-to-use tool.">
+
+  <meta name="google-site-verification" content="q9hm9DtgzXKvTOdSj1EhILxkvqWSA00e-ffDHNVvieE" />
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #0b1020;
       color: #f8fafc;
     }
+
     header {
       padding: 22px 7%;
       display: flex;
@@ -21,9 +26,25 @@
       align-items: center;
       border-bottom: 1px solid #283047;
     }
-    .logo { font-size: 25px; font-weight: bold; color: #67e8f9; }
-    nav a { color: #cbd5e1; margin-left: 16px; text-decoration: none; font-size: 14px; }
-    .hero { text-align: center; padding: 70px 18px 45px; }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #67e8f9;
+    }
+
+    nav a {
+      color: #cbd5e1;
+      margin-left: 16px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 18px 45px;
+    }
+
     .tag {
       color: #67e8f9;
       background: #172554;
@@ -31,9 +52,21 @@
       padding: 8px 14px;
       font-size: 13px;
     }
-    h1 { font-size: clamp(34px, 6vw, 56px); margin: 25px 0 14px; }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 56px);
+      margin: 25px 0 14px;
+    }
+
     h1 span { color: #67e8f9; }
-    .intro { color: #aab6cc; line-height: 1.7; max-width: 600px; margin: auto; }
+
+    .intro {
+      color: #aab6cc;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: auto;
+    }
+
     .panel {
       max-width: 700px;
       margin: 30px auto;
@@ -43,7 +76,13 @@
       border-radius: 18px;
       text-align: left;
     }
-    label { display: block; margin-bottom: 10px; font-weight: bold; }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
     input {
       width: 100%;
       padding: 15px;
@@ -54,8 +93,16 @@
       font-size: 15px;
       outline: none;
     }
+
     input:focus { border-color: #67e8f9; }
-    .buttons { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
     button {
       border: 0;
       padding: 14px 20px;
@@ -64,27 +111,90 @@
       font-size: 15px;
       cursor: pointer;
     }
-    .primary { background: #67e8f9; color: #0b1020; }
-    .secondary { background: #29354e; color: white; }
-    #message { color: #cbd5e1; font-size: 14px; line-height: 1.6; margin-top: 15px; }
-    .tools { max-width: 950px; margin: 25px auto 65px; padding: 0 20px; }
+
+    .primary {
+      background: #67e8f9;
+      color: #0b1020;
+    }
+
+    .secondary {
+      background: #29354e;
+      color: white;
+    }
+
+    #message {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-top: 15px;
+    }
+
+    .tools {
+      max-width: 950px;
+      margin: 25px auto 65px;
+      padding: 0 20px;
+    }
+
     .tools h2, .info h2 { text-align: center; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px; margin-top: 25px; }
-    .card { background: #151d32; border: 1px solid #303b55; padding: 22px; border-radius: 15px; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: #151d32;
+      border: 1px solid #303b55;
+      padding: 22px;
+      border-radius: 15px;
+    }
+
     .card .emoji { font-size: 30px; }
-    .card p, .info p { color: #aab6cc; line-height: 1.7; }
-    .info { max-width: 760px; margin: 0 auto 55px; padding: 0 22px; }
-    footer { border-top: 1px solid #283047; padding: 25px 15px; text-align: center; color: #aab6cc; font-size: 13px; }
-    footer a { color: #67e8f9; margin: 0 8px; }
+
+    .card p, .info p {
+      color: #aab6cc;
+      line-height: 1.7;
+    }
+
+    .info {
+      max-width: 760px;
+      margin: 0 auto 55px;
+      padding: 0 22px;
+    }
+
+    footer {
+      border-top: 1px solid #283047;
+      padding: 25px 15px;
+      text-align: center;
+      color: #aab6cc;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: #67e8f9;
+      margin: 0 8px;
+    }
+
     @media (max-width: 480px) {
-      header { padding: 18px; flex-wrap: wrap; gap: 14px; }
+      header {
+        padding: 18px;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
       nav a { margin-left: 8px; }
+
       .hero { padding-top: 48px; }
+
       .panel { padding: 18px; }
+
       .buttons button { flex: 1; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">⚡ ViralVault</div>
@@ -98,7 +208,9 @@
   <main id="home">
     <section class="hero">
       <span class="tag">SIMPLE • FAST • FREE</span>
+
       <h1>Video & Image <span>Downloader</span></h1>
+
       <p class="intro">
         Open direct video and image links in one simple place.
         Paste a direct media URL below to get started.
@@ -106,11 +218,18 @@
 
       <div class="panel">
         <label for="mediaUrl">Paste a direct video or image URL</label>
-        <input id="mediaUrl" type="url" placeholder="https://example.com/video.mp4">
+
+        <input
+          id="mediaUrl"
+          type="url"
+          placeholder="https://example.com/video.mp4"
+        >
+
         <div class="buttons">
           <button class="primary" onclick="openMedia()">Open Media</button>
           <button class="secondary" onclick="downloadMedia()">Try Download</button>
         </div>
+
         <div id="message" role="status">
           Use a direct link to a media file that you own or have permission to save.
         </div>
@@ -119,17 +238,20 @@
 
     <section class="tools" id="tools">
       <h2>Explore Our Tools</h2>
+
       <div class="cards">
         <div class="card">
           <div class="emoji">🎬</div>
           <h3>Video Links</h3>
           <p>Open direct links to supported video files in your browser.</p>
         </div>
+
         <div class="card">
           <div class="emoji">🖼️</div>
           <h3>Image Links</h3>
           <p>Open direct image links and save images when your browser allows it.</p>
         </div>
+
         <div class="card">
           <div class="emoji">🔗</div>
           <h3>Easy to Use</h3>
@@ -140,12 +262,15 @@
 
     <section class="info" id="about">
       <h2>About ViralVault</h2>
+
       <p>
         ViralVault is a simple web tool for opening direct media links.
         We do not host the linked files. Only save content that you own
         or are authorized to download, and follow the source website's rules.
       </p>
+
       <h2>Privacy</h2>
+
       <p>
         This basic tool processes the link in your browser and does not
         upload it to a ViralVault server.
@@ -155,7 +280,9 @@
 
   <footer>
     © <span id="year"></span> ViralVault
+
     <p>Simple tools for everyday use.</p>
+
     <a href="privacy.html">Privacy Policy</a>
     <a href="contact.html">Contact Us</a>
   </footer>
@@ -170,24 +297,31 @@
 
       try {
         url = new URL(field.value.trim());
+
         if (url.protocol !== "https:" && url.protocol !== "http:") {
           throw new Error("Invalid protocol");
         }
+
         message.textContent = "";
         return url.href;
       } catch {
-        message.textContent = "Please paste a valid link starting with https:// or http://";
+        message.textContent =
+          "Please paste a valid link starting with https:// or http://";
         return null;
       }
     }
 
     function openMedia() {
       const url = getMediaUrl();
-      if (url) window.open(url, "_blank", "noopener,noreferrer");
+
+      if (url) {
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
     }
 
     function downloadMedia() {
       const url = getMediaUrl();
+
       if (!url) return;
 
       const link = document.createElement("a");
@@ -195,6 +329,7 @@
       link.download = "";
       link.target = "_blank";
       link.rel = "noopener noreferrer";
+
       document.body.appendChild(link);
       link.click();
       link.remove();
