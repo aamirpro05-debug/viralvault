@@ -2,133 +2,71 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ViralVault - Social Media Downloader</title>
-<meta name="description" content="ViralVault social media link organizer and video preview tool for YouTube, TikTok, Instagram, Facebook and X.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViralVault - Video Downloader</title>
+<meta name="description" content="ViralVault helps you find official video download options and save supported videos easily.">
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#0b1020;color:#fff}
-header{text-align:center;padding:28px 12px;background:#151f36}
-.logo{font-size:32px;font-weight:bold;color:#45f0c4}
-main{max-width:760px;margin:auto;padding:20px}
-.panel{background:#151f36;padding:22px;border-radius:16px;margin:18px 0}
-h2{text-align:center}
-p{color:#c6d1e4;line-height:1.6}
-input,select{width:100%;padding:14px;margin:9px 0;border-radius:9px;border:1px solid #53627b;background:#fff;color:#111;font-size:16px}
-button,.btn{display:inline-block;text-decoration:none;border:0;border-radius:9px;padding:13px 17px;margin:5px;background:#45f0c4;color:#07131a;font-weight:bold;cursor:pointer}
-.actions{text-align:center}
-.networks{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.network{background:#202e49;padding:14px;border-radius:10px;text-align:center}
-#result{overflow-wrap:anywhere}
-iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:10px}
-footer{text-align:center;padding:24px;color:#9eabc1}
+body{margin:0;font-family:Arial,sans-serif;background:#101323;color:white;text-align:center}
+header{padding:24px;background:#171c35}
+h1{color:#65e6c2;margin:0}
+main{max-width:600px;margin:35px auto;padding:20px}
+input,select,button{box-sizing:border-box;width:100%;padding:15px;margin:10px 0;border-radius:9px;font-size:16px}
+input,select{background:#fff;border:1px solid #ddd;color:#222}
+button{background:#65e6c2;border:0;font-weight:bold;cursor:pointer}
+.card{background:#1b213b;padding:22px;border-radius:15px}
+.note{color:#c7cce0;font-size:14px;line-height:1.6}
+a{color:#65e6c2}
+footer{padding:25px;color:#c7cce0}
 </style>
 </head>
 <body>
 <header>
- <div class="logo">ViralVault</div>
- <p>All-in-One Social Media Video Tools</p>
+<h1>ViralVault</h1>
+<p>Video & Image Toolkit</p>
 </header>
-
 <main>
- <section class="panel">
-  <h2>Video Link Tool</h2>
-  <p>Paste a public social media link below to identify the platform and open its original post.</p>
-  <input id="url" type="url" placeholder="Paste video or post link here">
-  <div class="actions">
-   <button onclick="processLink()">Check Link</button>
-   <button onclick="clearAll()">Clear</button>
-  </div>
-  <div id="result" aria-live="polite"></div>
- </section>
-
- <section class="panel">
-  <h2>Supported Platforms</h2>
-  <div class="networks">
-   <div class="network">▶️ YouTube</div>
-   <div class="network">🎵 TikTok</div>
-   <div class="network">📸 Instagram</div>
-   <div class="network">📘 Facebook</div>
-   <div class="network">𝕏 X / Twitter</div>
-   <div class="network">📌 Pinterest</div>
-   <div class="network">▶️ Vimeo</div>
-   <div class="network">👻 Snapchat</div>
-  </div>
- </section>
-
- <section class="panel">
-  <h2>How It Works</h2>
-  <p>1. Copy a public post or video URL.</p>
-  <p>2. Paste it into the box above.</p>
-  <p>3. Open the original post or view a supported video preview.</p>
-  <p>Direct downloads require a compatible official service or authorized download source. Private, restricted or protected videos cannot be downloaded by this page.</p>
- </section>
+<div class="card">
+<h2>Video Downloader</h2>
+<p>Choose a platform and paste your video link.</p>
+<select id="platform">
+<option value="youtube">YouTube</option>
+<option value="tiktok">TikTok</option>
+<option value="facebook">Facebook</option>
+</select>
+<input id="videoUrl" type="url" placeholder="Paste video URL here">
+<button onclick="openVideo()">Continue to Video</button>
+<p class="note" id="message">Only download videos you own or are permitted to save. Downloads depend on platform support.</p>
+</div>
+<div class="card" style="margin-top:20px">
+<h2>How it works</h2>
+<p>1. Choose YouTube, TikTok or Facebook.</p>
+<p>2. Paste the video link.</p>
+<p>3. Continue to the original video page.</p>
+</div>
 </main>
-
-<footer>© 2026 ViralVault | Social Media Tools</footer>
-
+<footer>ViralVault © 2026</footer>
 <script>
-function processLink(){
- const input=document.getElementById('url').value.trim();
- const result=document.getElementById('result');
- let u;
- try{u=new URL(input)}catch(e){
-  result.textContent='Please paste a valid complete URL.';
-  return;
+function openVideo(){
+ const field=document.getElementById('videoUrl');
+ const platform=document.getElementById('platform').value;
+ const message=document.getElementById('message');
+ let url;
+ try{url=new URL(field.value.trim())}catch(e){
+ message.textContent='Please paste a valid video link first.';
+ return;
  }
- if(!['http:','https:'].includes(u.protocol)){
-  result.textContent='Only HTTP or HTTPS links are supported.';
-  return;
+ const host=url.hostname.toLowerCase().replace(/^www\./,'');
+ const allowed={
+ youtube:['youtube.com','m.youtube.com','youtu.be'],
+ tiktok:['tiktok.com','vm.tiktok.com'],
+ facebook:['facebook.com','m.facebook.com','fb.watch']
+ };
+ if(!allowed[platform].some(d=>host===d||host.endsWith('.'+d))){
+ message.textContent='Please enter a valid link for the platform you selected.';
+ return;
  }
-
- const h=u.hostname.toLowerCase().replace(/^www\./,'');
- const sites=[
-  {name:'YouTube',hosts:['youtube.com','m.youtube.com','youtu.be']},
-  {name:'TikTok',hosts:['tiktok.com']},
-  {name:'Instagram',hosts:['instagram.com']},
-  {name:'Facebook',hosts:['facebook.com','fb.watch','m.facebook.com']},
-  {name:'X / Twitter',hosts:['x.com','twitter.com']},
-  {name:'Pinterest',hosts:['pinterest.com','pin.it']},
-  {name:'Vimeo',hosts:['vimeo.com']},
-  {name:'Snapchat',hosts:['snapchat.com']}
- ];
- const site=sites.find(s=>s.hosts.some(d=>h===d||h.endsWith('.'+d)));
- if(!site){
-  result.textContent='This website is not in our supported platform list.';
-  return;
- }
-
- result.replaceChildren();
- const title=document.createElement('h3');
- title.textContent=site.name+' link detected';
- const message=document.createElement('p');
- message.textContent='Open the original post. Direct downloading depends on the platform and its permissions.';
- const open=document.createElement('a');
- open.className='btn';
- open.href=u.href;
- open.target='_blank';
- open.rel='noopener noreferrer';
- open.textContent='Open Original Video';
- result.append(title,message,open);
-
- if(site.name==='YouTube'){
-  const match=u.hostname==='youtu.be'
-   ?u.pathname.split('/').filter(Boolean)[0]
-   :u.searchParams.get('v')||
-    (u.pathname.match(/^\/(shorts|embed|live)\/([^/?]+)/)||[])[2];
-  if(match&&/^[A-Za-z0-9_-]{11}$/.test(match)){
-   const frame=document.createElement('iframe');
-   frame.src='https://www.youtube-nocookie.com/embed/'+match;
-   frame.title='YouTube preview';
-   frame.allowFullscreen=true;
-   frame.loading='lazy';
-   result.insertBefore(frame,message);
-  }
- }
-}
-function clearAll(){
- document.getElementById('url').value='';
- document.getElementById('result').replaceChildren();
+ window.open(url.href,'_blank','noopener');
+ message.textContent='Video page opened. Download availability depends on the platform.';
 }
 </script>
 </body>
