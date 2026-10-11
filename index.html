@@ -1,248 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V32GZC9MJL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-V32GZC9MJL');
-</script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ViralVault - Video & Image Downloader</title>
-  <meta name="description" content="ViralVault helps you open and save direct video and image file links. Use this free, mobile-friendly tool for media links you have permission to download.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
-  <meta name="theme-color" content="#101828">
-  <link rel="canonical" href="https://aamirpro05-debug.github.io/viralvault/">
-  <!-- Keep your existing Google Search Console verification meta tag here if you have one. -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="ViralVault - Video & Image Downloader">
-  <meta property="og:description" content="Open or save direct video and image links with a simple, mobile-friendly tool.">
-  <meta property="og:url" content="https://aamirpro05-debug.github.io/viralvault/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ViralVault - Discover useful online tools, video resources, image resources and helpful digital guides.">
+  <meta name="robots" content="index, follow">
+  <title>ViralVault - Free Online Tools & Digital Resources</title>
   <style>
-    :root{color-scheme:dark;--bg:#0b1020;--panel:#131b2e;--panel2:#18233a;--text:#f4f7ff;--muted:#aab5ca;--accent:#7c5cff;--accent2:#22d3ee;--line:#293650;--good:#b7f7d2}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#182447 0%,var(--bg) 52%);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    a{color:#9cecff}a:hover{color:#fff}.wrap{width:min(1100px,92%);margin:auto}.top{padding:18px 0;border-bottom:1px solid var(--line);background:#0b1020d9}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}.brand{font-size:1.3rem;font-weight:850;letter-spacing:.2px;text-decoration:none;color:#fff}.brand span{color:var(--accent2)}nav{display:flex;gap:16px;flex-wrap:wrap}nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
-    .hero{text-align:center;padding:58px 0 34px}.eyebrow{color:var(--accent2);font-weight:750;text-transform:uppercase;letter-spacing:2px;font-size:.78rem}.hero h1{font-size:clamp(2rem,6vw,3.6rem);line-height:1.1;letter-spacing:-1.5px;margin:12px 0}.hero p{max-width:700px;margin:16px auto;color:var(--muted);font-size:1.08rem}
-    .tool{max-width:800px;margin:28px auto 0;background:linear-gradient(145deg,#18233a,#10182a);border:1px solid var(--line);border-radius:22px;padding:clamp(18px,4vw,30px);box-shadow:0 20px 65px #0005;text-align:left}.tabs{display:flex;gap:8px;margin-bottom:16px}.tab{border:1px solid var(--line);background:#10182a;color:var(--muted);padding:10px 16px;border-radius:12px;cursor:pointer;font-weight:750}.tab.active{background:var(--accent);border-color:var(--accent);color:#fff}.field-label{display:block;font-weight:750;margin:12px 0 7px}.url-row{display:flex;gap:10px}.url-row input{min-width:0;flex:1}.input{width:100%;border:1px solid #354361;border-radius:12px;padding:14px;background:#0a1120;color:#fff;font:inherit;outline:none}.input:focus{border-color:var(--accent2);box-shadow:0 0 0 3px #22d3ee22}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;border:0;border-radius:12px;padding:12px 18px;background:var(--accent);color:#fff;font:inherit;font-weight:800;text-decoration:none;cursor:pointer}.btn.secondary{background:#26334d;border:1px solid #3b4b6a}.btn:disabled{opacity:.5;cursor:not-allowed}.hint,.status{font-size:.9rem;color:var(--muted)}.status{margin-top:14px;min-height:1.5em}.status.error{color:#ffb4b4}.status.success{color:var(--good)}.preview{margin-top:18px;display:none}.preview.show{display:block}.preview video,.preview img{max-width:100%;max-height:420px;border-radius:12px;background:#05070d}.section{padding:38px 0}.section h2{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.2;margin:0 0 14px}.section-intro{color:var(--muted);max-width:780px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}.card{background:#131b2e;border:1px solid var(--line);border-radius:16px;padding:20px}.card h3{margin:0 0 8px}.card p{margin:0;color:var(--muted)}.faq details{padding:16px 0;border-bottom:1px solid var(--line)}.faq summary{font-weight:750;cursor:pointer}.faq details p{color:var(--muted)}.notice{border:1px solid #665a9c;background:#211c3d;border-radius:14px;padding:16px;color:#e3dcff}.footer{margin-top:30px;padding:26px 0 40px;border-top:1px solid var(--line);color:var(--muted)}.footer-inner{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}.footer a{margin-right:14px}.small{font-size:.88rem;color:var(--muted)}
-    @media(max-width:720px){.cards{grid-template-columns:1fr}.url-row{flex-direction:column}.url-row .btn{width:100%}.hero{padding-top:42px}nav{gap:11px}.tool{border-radius:16px}}
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+      color: #202b3c;
+      line-height: 1.6;
+    }
+    header {
+      background: #172554;
+      color: white;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 36px; }
+    header p { margin: 8px 0 0; }
+    nav {
+      background: #1e40af;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: bold;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 24px 16px;
+    }
+    .hero {
+      background: white;
+      padding: 28px 20px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 3px 14px #0000000c;
+    }
+    .hero h2 { color: #1d4ed8; }
+    .search {
+      width: 100%;
+      max-width: 450px;
+      padding: 13px;
+      border: 1px solid #ccd5e3;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow: 0 3px 14px #0000000c;
+    }
+    .card h3 { color: #1d4ed8; margin-top: 0; }
+    .button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .article {
+      background: white;
+      margin-top: 24px;
+      padding: 22px;
+      border-radius: 12px;
+    }
+    footer {
+      background: #172554;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 30px;
+    }
+    footer a { color: white; margin: 0 8px; }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"ViralVault",
-    "url":"https://aamirpro05-debug.github.io/viralvault/",
-    "applicationCategory":"UtilitiesApplication",
-    "operatingSystem":"Any",
-    "description":"A browser-based tool for opening and saving direct video and image file links.",
-    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
-  }
-  </script>
 </head>
 <body>
-<header class="top">
-  <div class="wrap nav">
-    <a class="brand" href="#home" aria-label="ViralVault home">Viral<span>Vault</span></a>
-    <nav aria-label="Main navigation">
-      <a href="#tool">Downloader</a><a href="#how">How it works</a><a href="#faq">FAQ</a><a href="#about">About</a><a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-<main id="home">
-  <section class="hero wrap">
-    <div class="eyebrow">Free online media tool</div>
-    <h1>Video & Image Downloader</h1>
-    <p>Open direct video and image links, preview supported media, and save files when your browser and the source website allow it. Simple, free, and mobile-friendly.</p>
-    <div class="tool" id="tool">
-      <div class="tabs" role="tablist" aria-label="Media type">
-        <button class="tab active" type="button" data-kind="video" role="tab" aria-selected="true">Video link</button>
-        <button class="tab" type="button" data-kind="image" role="tab" aria-selected="false">Image link</button>
+  <header>
+    <h1>ViralVault</h1>
+    <p>Your Hub for Free Online Tools and Digital Resources</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#tools">Tools</a>
+    <a href="#guides">Guides</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <main id="home">
+    <section class="hero">
+      <h2>Discover Useful Online Resources</h2>
+      <p>Explore helpful tools, learn new digital skills and discover useful resources in one place.</p>
+      <input class="search" id="search" type="search"
+        placeholder="Search tools and guides..." aria-label="Search tools and guides">
+    </section>
+
+    <section id="tools">
+      <h2>Explore Our Resources</h2>
+      <div class="grid" id="cards">
+        <article class="card">
+          <h3>Free Online Tools</h3>
+          <p>Discover tools for everyday digital tasks, productivity and working online.</p>
+          <a class="button" href="#guides">Explore Guides</a>
+        </article>
+        <article class="card">
+          <h3>Video Resources</h3>
+          <p>Learn about video formats, file sizes and safe ways to access downloadable media.</p>
+          <a class="button" href="#video-guide">Learn More</a>
+        </article>
+        <article class="card">
+          <h3>Image Resources</h3>
+          <p>Explore image formats, resizing tips and free image resources for your projects.</p>
+          <a class="button" href="#image-guide">Learn More</a>
+        </article>
+        <article class="card">
+          <h3>Online Earning Guides</h3>
+          <p>Learn about beginner-friendly digital skills, websites and affiliate marketing.</p>
+          <a class="button" href="#earning-guide">Read Guide</a>
+        </article>
       </div>
-      <form id="mediaForm">
-        <label class="field-label" for="mediaUrl">Paste a direct media URL</label>
-        <div class="url-row">
-          <input class="input" id="mediaUrl" type="url" inputmode="url" placeholder="https://example.com/video.mp4" autocomplete="url" required>
-          <button class="btn" type="submit">Open media</button>
-        </div>
-        <div class="actions">
-          <button class="btn secondary" id="downloadBtn" type="button" disabled>Download file</button>
-          <button class="btn secondary" id="openBtn" type="button" disabled>Open in new tab</button>
-          <button class="btn secondary" id="clearBtn" type="button">Clear</button>
-        </div>
-        <p class="hint">Use a direct link to a media file (such as .mp4, .webm, .jpg, .png, or .webp), not a video-page URL. Download availability depends on the source server and browser.</p>
-        <div class="status" id="status" role="status" aria-live="polite"></div>
-        <div class="preview" id="preview"></div>
-      </form>
-    </div>
-  </section>
+      <p id="no-results" hidden>No matching resources found. Try another search.</p>
+    </section>
 
-  <section class="section wrap" id="how">
-    <h2>How to use ViralVault</h2>
-    <p class="section-intro">Save media you own or have permission to download. ViralVault runs in your browser and does not bypass private accounts, paywalls, DRM, or platform restrictions.</p>
-    <div class="cards">
-      <article class="card"><h3>1. Copy a direct link</h3><p>Copy the direct URL of a video or image file from a source that permits downloading.</p></article>
-      <article class="card"><h3>2. Paste and preview</h3><p>Choose Video link or Image link, paste the URL, then press Open media to check if it can be displayed.</p></article>
-      <article class="card"><h3>3. Save your file</h3><p>Press Download file. Some websites block browser downloads; if that happens, use the source website's official download option.</p></article>
-    </div>
-  </section>
+    <section class="article" id="guides">
+      <h2>Latest Digital Guides</h2>
+      <h3 id="video-guide">How to Download Videos Safely</h3>
+      <p>Use the original website's download option whenever available. Only download content you own or have permission to save, and respect copyright restrictions.</p>
 
-  <section class="section wrap" id="about">
-    <h2>About ViralVault</h2>
-    <p class="section-intro">ViralVault is a simple online utility for working with direct video and image file links. The goal is to offer a clear, mobile-friendly experience without requiring an account. Results depend on the URL, browser, and permissions set by the source website.</p>
-  </section>
+      <h3 id="image-guide">How to Find Useful Images</h3>
+      <p>Choose images from reputable free-image libraries and check their license before using them on websites, social media or commercial projects.</p>
 
-  <section class="section wrap faq" id="faq">
-    <h2>Frequently asked questions</h2>
-    <details><summary>Can ViralVault download any video from any website?</summary><p>No. This tool supports direct media-file links. A link to a page on a social platform is not usually a direct video file. Use the platform's official download feature and follow its terms.</p></details>
-    <details><summary>Why does the download button sometimes not work?</summary><p>Some source websites block cross-origin downloads or require a login. Your browser may open the file instead of saving it. In that case, use the original website's download option.</p></details>
-    <details><summary>Is ViralVault free?</summary><p>Yes. This website tool is free to use. Your mobile data or internet provider may still charge for data usage.</p></details>
-    <details><summary>Does ViralVault store my links?</summary><p>This static page does not send your pasted URL to a ViralVault server. Your browser requests the media directly from the URL you enter. The source website may have its own logging and privacy practices.</p></details>
-    <details><summary>Can I download copyrighted content?</summary><p>Only download content when you own it or have permission, and comply with the source website's rules and applicable law.</p></details>
-  </section>
+      <h3 id="earning-guide">Getting Started with Online Earning</h3>
+      <p>Start by learning a useful skill, creating original content and exploring legitimate affiliate programs. Earnings are not guaranteed and usually require time and effort.</p>
+    </section>
 
-  <section class="section wrap" id="privacy">
-    <h2>Privacy policy</h2>
-    <p class="section-intro">ViralVault is a static webpage. The URL you enter is used by your browser to request the media from the source address. This page does not provide an account system or upload your link to a ViralVault backend. The source website may collect technical data under its own privacy policy. If analytics or advertising services are added later, this policy should be updated to explain them.</p>
-  </section>
+    <section class="article" id="about">
+      <h2>About ViralVault</h2>
+      <p>ViralVault is a digital resource website designed to help visitors discover useful online tools, media resources and beginner-friendly guides.</p>
+      <p>We aim to publish helpful, original and easy-to-understand information for our readers.</p>
+    </section>
 
-  <section class="section wrap" id="contact">
-    <h2>Contact</h2>
-    <p class="section-intro">For website feedback or bug reports, contact the site owner by email. Replace the placeholder email below with an email address you actively use before publishing.</p>
-    <p><a href="mailto:YOUR-EMAIL@example.com">YOUR-EMAIL@example.com</a></p>
-  </section>
-  <section class="section wrap">
-    <div class="notice"><strong>Important:</strong> ViralVault works with direct media-file URLs. It cannot guarantee downloads from YouTube, TikTok, Instagram, Facebook, or other platform pages. Please respect copyright and the source site's terms.</div>
-  </section>
-</main>
-<footer class="footer">
-  <div class="wrap footer-inner">
-    <div>© <span id="year"></span> ViralVault. Use media responsibly.</div>
-    <div><a href="#privacy">Privacy</a><a href="#contact">Contact</a><a href="#about">About</a></div>
-  </div>
-</footer>
-<script>
-(() => {
-  const form = document.getElementById('mediaForm');
-  const urlInput = document.getElementById('mediaUrl');
-  const status = document.getElementById('status');
-  const preview = document.getElementById('preview');
-  const downloadBtn = document.getElementById('downloadBtn');
-  const openBtn = document.getElementById('openBtn');
-  const clearBtn = document.getElementById('clearBtn');
-  const tabs = [...document.querySelectorAll('.tab')];
-  let kind = 'video';
-  let currentUrl = '';
-  let objectUrl = '';
+    <section class="article">
+      <h2>Privacy Policy</h2>
+      <p>This website may use Google Analytics to understand visitor activity and improve the website. Information is handled according to Google's applicable policies and settings.</p>
+      <p>Contact the website owner for privacy-related questions.</p>
+    </section>
+  </main>
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+  <footer>
+    <p>&copy; 2026 ViralVault. All rights reserved.</p>
+    <a href="#about">About</a>
+    <a href="#guides">Guides</a>
+    <a href="#home">Back to top</a>
+  </footer>
 
-  function setStatus(message, type='') {
-    status.textContent = message;
-    status.className = 'status' + (type ? ' ' + type : '');
-  }
-  function cleanPreview() {
-    preview.replaceChildren();
-    preview.classList.remove('show');
-    if (objectUrl) URL.revokeObjectURL(objectUrl);
-    objectUrl = '';
-  }
-  function validHttpUrl(value) {
-    try {
-      const u = new URL(value);
-      return u.protocol === 'https:' || u.protocol === 'http:';
-    } catch (_) { return false; }
-  }
-  tabs.forEach(tab => tab.addEventListener('click', () => {
-    kind = tab.dataset.kind;
-    tabs.forEach(t => {
-      const active = t === tab;
-      t.classList.toggle('active', active);
-      t.setAttribute('aria-selected', String(active));
+  <script>
+    const search = document.getElementById('search');
+    const cards = [...document.querySelectorAll('#cards .card')];
+    const noResults = document.getElementById('no-results');
+
+    search.addEventListener('input', function () {
+      const term = this.value.toLowerCase().trim();
+      let visible = 0;
+
+      cards.forEach(function (card) {
+        const match = card.textContent.toLowerCase().includes(term);
+        card.hidden = !match;
+        if (match) visible++;
+      });
+
+      noResults.hidden = visible !== 0;
     });
-    urlInput.placeholder = kind === 'video' ? 'https://example.com/video.mp4' : 'https://example.com/image.jpg';
-    cleanPreview();
-    currentUrl = '';
-    downloadBtn.disabled = true;
-    openBtn.disabled = true;
-    setStatus('');
-  }));
-
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    cleanPreview();
-    const value = urlInput.value.trim();
-    if (!validHttpUrl(value)) {
-      setStatus('Please enter a valid http:// or https:// media URL.', 'error');
-      return;
-    }
-    currentUrl = value;
-    const media = kind === 'video' ? document.createElement('video') : document.createElement('img');
-    if (kind === 'video') {
-      media.controls = true;
-      media.playsInline = true;
-      media.preload = 'metadata';
-    } else {
-      media.alt = 'Media preview';
-      media.loading = 'lazy';
-    }
-    media.referrerPolicy = 'no-referrer';
-    media.src = value;
-    media.addEventListener('error', () => {
-      setStatus('Preview failed. This may not be a direct media link, or the source may block access. Try the source website’s official download option.', 'error');
-    }, {once:true});
-    media.addEventListener(kind === 'video' ? 'loadedmetadata' : 'load', () => {
-      setStatus('Media loaded. Try Download file; success depends on the source server.', 'success');
-    }, {once:true});
-    preview.appendChild(media);
-    preview.classList.add('show');
-    downloadBtn.disabled = false;
-    openBtn.disabled = false;
-    setStatus('Trying to load the media preview…');
-  });
-
-  downloadBtn.addEventListener('click', async () => {
-    if (!currentUrl) return;
-    setStatus('Trying to download…');
-    try {
-      const response = await fetch(currentUrl, {mode:'cors'});
-      if (!response.ok) throw new Error('Source returned an error');
-      const blob = await response.blob();
-      objectUrl = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = objectUrl;
-      const path = new URL(currentUrl).pathname;
-      const name = path.split('/').filter(Boolean).pop() || (kind === 'video' ? 'viralvault-video' : 'viralvault-image');
-      a.download = name;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setStatus('Download started. Check your browser downloads.', 'success');
-    } catch (_) {
-      const a = document.createElement('a');
-      a.href = currentUrl;
-      a.target = '_blank';
-      a.rel = 'noopener noreferrer';
-      a.click();
-      setStatus('The source blocked direct downloading. The file was opened in a new tab if allowed; use the source website’s download option if needed.', 'error');
-    }
-  });
-  openBtn.addEventListener('click', () => {
-    if (currentUrl) window.open(currentUrl, '_blank', 'noopener,noreferrer');
-  });
-  clearBtn.addEventListener('click', () => {
-    urlInput.value = '';
-    currentUrl = '';
-    cleanPreview();
-    downloadBtn.disabled = true;
-    openBtn.disabled = true;
-    setStatus('');
-    urlInput.focus();
-  });
-})();
-</script>
+  </script>
 </body>
 </html>
