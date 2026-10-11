@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Online Tools | ViralVault</title>
+  <meta name="description" content="Discover useful free online tools for images, text, file sizes and everyday tasks with ViralVault.">
+  <link rel="canonical" href="https://aamirpro05-debug.github.io/viralvault/free-online-tools.html">
+  <style>
+    body{font-family:Arial,sans-serif;max-width:850px;margin:30px auto;padding:20px;line-height:1.8;color:#222}
+    h1,h2{color:#5635b5}
+    .tool{background:#f3f0ff;padding:15px;margin:15px 0;border-radius:10px}
+    input,textarea,button{font:inherit;padding:10px;max-width:100%;box-sizing:border-box}
+    button{cursor:pointer;background:#5635b5;color:white;border:0;border-radius:6px}
+    a{color:#5635b5}
+  </style>
+</head>
+<body>
+  <h1>Free Online Tools</h1>
+  <p>Explore simple browser-based tools for everyday tasks. These tools run on this page without needing an account.</p>
+
+  <div class="tool">
+    <h2>1. Word and Character Counter</h2>
+    <p>Type or paste text to count words and characters.</p>
+    <textarea id="textInput" rows="5" style="width:100%" placeholder="Type your text here..."></textarea>
+    <p id="countResult">Words: 0 | Characters: 0</p>
+    <button onclick="countText()">Count Text</button>
+  </div>
+
+  <div class="tool">
+    <h2>2. Image Guide</h2>
+    <p>Learn about JPG, PNG and WebP image formats and safe image use.</p>
+    <a href="image-download-guide.html">Read the Image Download Guide</a>
+  </div>
+
+  <div class="tool">
+    <h2>3. Video Guide</h2>
+    <p>Learn about video formats, file sizes and safe downloads.</p>
+    <a href="video-download-guide.html">Read the Video Download Guide</a>
+  </div>
+
+  <h2>Why Use Online Tools?</h2>
+  <p>Simple online tools can save time on common tasks. Always check the privacy practices of a website before entering confidential information.</p>
+
+  <h2>Frequently Asked Questions</h2>
+  <p><strong>Are these tools free?</strong><br>Yes, the tools and guides on this page are free to use.</p>
+  <p><strong>Do I need to create an account?</strong><br>No account is needed for the word counter on this page.</p>
+
+  <p><a href="index.html">Return to ViralVault homepage</a></p>
+  <hr>
+  <p>ViralVault — Helpful guides for your digital life.</p>
+  <p>Copyright 2026 ViralVault.</p>
+
+  <script>
+    function countText() {
+      const text = document.getElementById('textInput').value;
+      const trimmed = text.trim();
+      const words = trimmed ? trimmed.split(/\s+/).length : 0;
+      document.getElementById('countResult').textContent =
+        'Words: ' + words + ' | Characters: ' + text.length;
+    }
+    document.getElementById('textInput').addEventListener('input', countText);
+  </script>
+</body>
+</html>
